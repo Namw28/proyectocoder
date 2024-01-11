@@ -1,0 +1,29 @@
+{% extends 'tiposdecafe/padre.html' %}
+
+
+
+<form method="get" action="{% url 'busqueda' %}">
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+
+
+<div class="text-center text-white">
+    {% if resultados %}
+        <h2>Resultados de la Búsqueda:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for grano in resultados %}
+                    <tr>
+                        <td>{{ grano.nombre }}</td>               
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>

@@ -1,0 +1,48 @@
+{% extends 'tiposdecafe/padre.html' %}
+
+{% block titulo %}
+<h1 class="mb-5"> Bienvenidos al maravilloso mundo del cafe de especialidad!</h1> 
+{% endblock %}
+
+
+{% block subtitulo %}
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-20 order-lg-1 my-auto showcase-text">
+                    <p>El café es una bebida apreciada en todo el mundo por su sabor distintivo y sus propiedades estimulantes. Con una historia rica y una variedad de perfiles de sabor, el café se ha convertido en una parte esencial de muchas culturas.</p>
+                    <p>En nuestra página, exploraremos los diferentes aspectos del café, desde los diversos tipos de granos y sus orígenes hasta los métodos de tostado y preparación. Descubre la magia detrás de cada taza y sumérgete en el fascinante mundo del café con nosotros.</p>
+                 </div>
+            </div>
+        </div>
+{% endblock %}
+
+
+{% block bajo %}    
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Formulario de Búsqueda -->
+            <form method="get" action="{% url 'busqueda_grano' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input class="form-control form-control-lg" name="busqueda_grano" type="text" placeholder="Buscar por semilla" />
+                </div>
+                <button class="btn btn-primary btn-lg" type="submit">Buscar</button>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <!-- Resultados de la Búsqueda -->
+            {% if resultados %}
+                <h2>Resultados de la Búsqueda:</h2>
+                <ul>
+                    {% for resultado in resultados %}
+                        <li>{{ resultado.nombre }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

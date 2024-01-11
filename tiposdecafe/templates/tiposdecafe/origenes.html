@@ -1,0 +1,24 @@
+{% extends 'tiposdecafe/padre.html' %}
+
+{% block titulo %}
+<h1 class="mb-5"> Un Viaje Sensorial a las Tierras Cafeteras </h1> 
+{% endblock %}
+
+
+{% block subtitulo %}
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-20 order-lg-1 my-auto showcase-text">
+                    <p class="lead mb-0"> En cada sorbo de café, se emprende un viaje mágico a las tierras donde nace el oro líquido. Los granos, cultivados con esmero bajo la sombra de exuberantes bosques tropicales, cuentan historias de ricos suelos, brisas cálidas y cuidados tradicionales. Desde las montañas de América Latina hasta las plantaciones africanas, cada región deja su impronta única en la taza. Descubre el arte de saborear la diversidad de los orígenes del café, donde cada grano es un testimonio de la tierra que lo vio crecer.</p>
+                
+                    <br>
+                    <br>
+                    <br>
+                    <a href="{% url 'formulario_origenes' %}" class="btn btn-success">Agregar información sobre los origenes</a>  
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'tiposdecafe/padre.html' %}
+
+{% block titulo %}
+<h1 class="mb-5"> Armonía Cafetera: Notas y Melodías de Café en la Taza </h1> 
+{% endblock %}
+
+
+{% block subtitulo %}
+    <section class="showcase">
+        <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-20 order-lg-1 my-auto showcase-text">
+                        <p class="lead mb-0">El café, un artista versátil en la taza, despliega su magia en una danza de infusiones. Desde el susurro suave de un espresso hasta el abrazo reconfortante de un cappuccino, cada preparación es una obra maestra única. Las infusiones de café, como partituras musicales, componen notas de sabor que bailan en el paladar. Un latte, suave como un poema, acaricia el alma, mientras que un americano, audaz y libre, despierta los sentidos. Explora este mundo de infusiones, donde cada sorbo es una melodía que te transporta a un viaje sensorial, una experiencia única tejida con los hilos aromáticos del café.</p>
+                    
+                        <br>
+                        <br>
+                        <br>
+                        <a href="{% url 'formulario_preparacion' %}" class="btn btn-success">Agregar información sobre el filtrado</a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

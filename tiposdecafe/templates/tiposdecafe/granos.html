@@ -1,0 +1,26 @@
+{% extends 'tiposdecafe/padre.html' %}
+
+{% block titulo %}
+    <h1 class="mb-5">Las maravillosas semillas</h1> 
+{% endblock %}
+
+{% block subtitulo %}
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-20 order-lg-1 my-auto showcase-text">
+                    <p class="lead mb-0">Las semillas de café, pequeñas maravillas encerradas en el corazón de coloridos frutos. Son tesoros ocultos, portadores del aroma y la esencia que despiertan cada mañana. En su humilde exterior, residen los matices de la tierra, el sol y la lluvia; pero al interior, laten los secretos de una infusión que transporta a lugares lejanos con cada sorbo. Las semillas, silenciosas guardianas del elixir matutino, aguardan pacientemente su transformación en elixir dorado. Descubre la historia que cada semilla cuenta mientras te sumerges en el mundo mágico del café.</p>
+                    
+                    <br>
+                    <br>
+                    <br>
+                    <a href="{% url 'formulario_grano' %}" class="btn btn-success">Agregar información sobre semillas</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}
