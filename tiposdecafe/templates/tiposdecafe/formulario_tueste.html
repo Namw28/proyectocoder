@@ -4,7 +4,7 @@
   {% block titulo %}
 
   <h1>Ingresa aqui la informacion</h1>
-  <form method="POST" action="{% url 'formulario_tueste' %}">
+  <form method="POST" action="{% url 'tiposdecafe:formulario_tueste' %}">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Guardar</button>

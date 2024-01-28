@@ -1,0 +1,27 @@
+{% extends 'tiposdecafe/padre.html' %}
+
+{% block titulo %}
+
+<h1>Registro de nuevo usuario</h1>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    <h2>Registro de Usuario</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrarse</button>
+    </form>
+</body>
+</html>
+
+{% for message in messages %}
+    <div>{{ message }}</div>
+{% endfor %}
+{% endblock %}

@@ -21,20 +21,28 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'tiposdecafe:inicio' %}">Inicio</a>
                
-                <a class="navbar-brand" href="{% url 'granos' %}">Tipos de granos</a>
+                <a class="navbar-brand" href="{% url 'tiposdecafe:granos' %}">Tipos de granos</a>
             
-                <a class="navbar-brand" href="{% url 'origenes' %}">Orígenes</a>
+                <a class="navbar-brand" href="{% url 'tiposdecafe:origenes' %}">Orígenes</a>
               
-                <a class="navbar-brand" href="{% url 'tostado' %}">Tostados</a>
+                <a class="navbar-brand" href="{% url 'tiposdecafe:tostado' %}">Tostados</a>
             
-                <a class="navbar-brand" href="{% url 'preparacion' %}">Preparacion</a>
-
-                <a class="navbar-brand" href="{% url 'historia' %}">Historia</a>
+                <a class="navbar-brand" href="{% url 'tiposdecafe:historia' %}">Historia</a>
             
                 </a>
-                <a class="btn btn-primary" href="{% url 'tutores' %}">Tutores</a>
+                {% if request.user.is_authenticated %}
+                     <p>Bienvenido, {{ request.user.username }} 
+                        {% if request.user.avatar %}
+                        <img src="{{ request.user.avatar.url }}" alt="Avatar" style="width: 50px; height: 50px;">
+                    {% endif %}
+                    | <a href="{% url 'tiposdecafe:editar_perfil' %}">editar perfil</a>
+                    | <a href="{% url 'tiposdecafe:logout' %}">Cerrar sesión</a></p>
+                {% else %}
+                      <p><a href="{% url 'tiposdecafe:inicio_sesion' %}">Iniciar sesión</a> 
+                    | <a href="{% url 'tiposdecafe:registrarse' %}">Registro</a></p>
+                {% endif %}
 
 
 
@@ -49,8 +57,9 @@
                     
                         <div class="text-center text-white">
                            
-                            <!-- Page heading-->{% block titulo %}    
+                            {% block titulo %}    
                 {% endblock %}
+                
                             <h1 class="mb-5"> </h1>
                                 <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             </form>
@@ -97,7 +106,7 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item"><a href="{% url 'tiposdecafe:aboutme' %}">About Me</a></li>
                             <li class="list-inline-item">⋅</li>
                             <li class="list-inline-item"><a href="#!">Contact</a></li>
                             <li class="list-inline-item">⋅</li>
@@ -108,14 +117,12 @@
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                                <a href="https://www.linkedin.com/in/nahuel-nazareno-fortunato-aab718142/" target="_blank"><i class="bi-linkedin fs-3"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                                <a href="https://github.com/Namw28" target="_blank"><i class="bi-github fs-3"></i></a>
                             </li>
+                            
                         </ul>
                     </div>
                 </div>

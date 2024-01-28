@@ -1,0 +1,19 @@
+{% extends 'tiposdecafe/padre.html' %}
+
+
+  {% block titulo %}
+
+ <h1> puedes editar tu perfil aqui</h1>
+ 
+{% block contenido %}
+<div class="container">
+  <h2>Editar Perfil</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar Cambios</button>
+  </form>
+</div>
+{% endblock %}
+
+{% endblock %}
