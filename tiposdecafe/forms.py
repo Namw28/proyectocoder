@@ -46,3 +46,9 @@ class CustomUserForm(forms.ModelForm):
     class Meta:
         model = CustomUser
         fields = ['username', 'email', 'avatar']
+
+
+class SemillaForm(forms.ModelForm):
+    class Meta:
+        model = Granos
+        fields = '__all__'

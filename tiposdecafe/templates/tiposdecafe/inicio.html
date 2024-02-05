@@ -8,7 +8,7 @@
                 {% endfor %}
                      </ul>
 {%else %}
-<h1 class="mb-5"> Bienvenidos al maravilloso mundo del cafe de especialidad!</h1> 
+<h1 class="mb-5"> ¡Bienvenidos al maravilloso mundo del café de especialidad!</h1> 
 
             {% endif %}
 {% endblock %}
@@ -32,24 +32,14 @@
     <div class="row">
         <div class="col-md-4">
             <!-- Formulario de Búsqueda -->
-            <form method="get" action="{% url 'tiposdecafe:busqueda_grano' %}">
+            <form method="GET" action="{% url 'tiposdecafe:ver_semillas' %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <input class="form-control form-control-lg" name="busqueda_grano" type="text" placeholder="Buscar por semilla" />
-                </div>
-                <button class="btn btn-primary btn-lg" type="submit">Buscar</button>
+                    
+                     <button type="submit">Descubre todas las semillas cargas por usuarios aqui!</button>
             </form>
         </div>
         <div class="col-md-8">
-            <!-- Resultados de la Búsqueda -->
-            {% if resultados %}
-                <h2>Resultados de la Búsqueda:</h2>
-                <ul>
-                    {% for resultado in resultados %}
-                        <li>{{ resultado.nombre }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
         </div>
     </div>
 </div>
