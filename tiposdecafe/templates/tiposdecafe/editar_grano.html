@@ -1,18 +1,14 @@
 {% extends 'tiposdecafe/padre.html' %}
 
 {% block titulo %}
-  <h1> Puedes editar tu perfil aquí</h1>
+  <h1>Editar Semilla</h1>
 
   <div class="container">
-    <h2>Editar Perfil</h2>
+    
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form.as_p }}
-      {{ form.avatar }}
       <button type="submit">Guardar Cambios</button>
     </form>
-    {% if user.avatar %}
-      <img src="{{ user.avatar.url }}" alt="Avatar">
-    {% endif %}
   </div>
 {% endblock %}

@@ -51,10 +51,6 @@ class CustomUser(AbstractUser):
         Group,
         verbose_name=('groups'),
         blank=True,
-        help_text=(
-            'The groups this user belongs to. A user will get all permissions '
-            'granted to each of their groups.'
-        ),
         related_name='customuser_set',
         related_query_name='user',
     )
@@ -62,17 +58,9 @@ class CustomUser(AbstractUser):
         Permission,
         verbose_name=('user permissions'),
         blank=True,
-        help_text=('Specific permissions for this user.'),
         related_name='customuser_set',
         related_query_name='user',
     )
 
     def __str__(self):
         return self.username  
-
-
-
-""" la idea es crear especificaiones de los distintos granos altura, tipo de semilla, tiempo de cosecha, origen+historia"""
-
-
-"""especie, tipo, zona_de_cosecha, pais_de_origen, metodo_de_procesamiento, altitud_de_cultivo"""

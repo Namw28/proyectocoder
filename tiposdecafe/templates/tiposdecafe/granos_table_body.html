@@ -1,0 +1,12 @@
+{% for grano in granos %}
+  <tr>
+    <td>{{ grano.id }}</td>
+    <td>{{ grano.nombre }}</td>
+    <td>{{ grano.region_produccion }}</td>
+    <td>{{ grano.tipo }}</td>
+    <td>{{ grano.altura_cultivo }}</td>
+    <td>{{ grano.tipo_semillas }}</td>
+    <td>{{ grano.tiempo_cosecha }}</td>
+    <td><a href="{% url 'tiposdecafe:editar_grano' grano.id %}">Editar</a></td>
+  </tr>
+{% endfor %}

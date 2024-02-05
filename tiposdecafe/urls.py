@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 
 app_name = 'tiposdecafe'
 
+
 urlpatterns = [
 
 
@@ -19,19 +20,19 @@ urlpatterns = [
     path('formulario_origenes/', formulario_origenes, name='formulario_origenes'),
     path('formulario_tueste/', formulario_tueste, name='formulario_tueste'),
     path('formulario_preparacion/', formulario_preparacion, name='formulario_preparacion'),
-    path('tutores',tutores, name='tutores'),
-    path('historia',historia, name='historia'),
-    path('busqueda_grano', busqueda_grano, name ='busqueda_grano'),
-   # path('login', inicio_sesion, name='inicio_sesion'),
+    path('historia/', historia, name='historia'),
     path('inicio_sesion/', login_request, name='inicio_sesion'),
     path('registrarse/', registrarse, name='registrarse'),
     path('logout/', logout_request, name='logout'),
     path('editar_perfil/', PerfilUsuarioUpdateView.as_view(), name='editar_perfil'),
-    path('aboutme/', aboutme, name='aboutme')
- 
-
-
+    path('aboutme/', aboutme, name='aboutme'),
+    path('ver_semillas/', ver_semillas, name='ver_semillas'),  
+    path('editar_grano/<int:grano_id>/', editar_semilla, name='editar_grano'), 
+    path('buscar_granos/', buscar_granos, name='buscar_granos'),
 ]
 
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    
